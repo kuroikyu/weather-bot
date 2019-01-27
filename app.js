@@ -1,7 +1,7 @@
 import Feed from 'rss-to-json'
 import { alertOnSlack } from './alertOnSlack'
 import { extractNumberFromTemperature } from './extractNumberFromTemperature'
-import { WEATHER_API } from './settings.json'
+import { WEATHER_API, CHANNEL } from './settings.json'
 
 Feed.load(WEATHER_API, (err, rss) => {
   if (err) {
@@ -13,9 +13,7 @@ Feed.load(WEATHER_API, (err, rss) => {
   const { title, link, description, created } = rss.items[1]
 
   // Prepare value for the Slack message: Forecast, Min Temp & Max Temp
-  const [maxTemp, minTemp, ...rest] = description
-    .split(',')
-    .map(el => el.trim())
+  const [maxTemp, minTemp, ...rest] = description.split(',').map(el => el.trim())
 
   const forecast = title
     .split(',')[0]
@@ -63,7 +61,7 @@ Feed.load(WEATHER_API, (err, rss) => {
   // Build Slack message
   const messageBody = {
     // as_user: false,
-    channel: '@kuroikyu',
+    channel: CHANNEL,
     icon_emoji: icon,
     username: botName,
     text: message,
