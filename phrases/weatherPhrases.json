@@ -1,0 +1,23 @@
+{
+  "cold": [
+    "Freezing!",
+    "It's a tad bit nippy out there",
+    "It's brass monkey weather",
+    "Stay frosty!",
+    "It's so cold, milk cows gave icicles",
+    "Cold as whiz",
+    "Colder than the hinges of hell",
+    "Brace yourself, winter is coming",
+    "Take a jacket, it's a bit chilly",
+    "It's like the dead of winter",
+    "Careful, you could slide into a ditch"
+  ],
+  "hot": [
+    "Looks like we're in for a hot one",
+    "It sure is a scorcher today",
+    "We're having quite a heatwave!",
+    "Melting!",
+    "It's like a furnace outside",
+    "We're in the dog days of summer"
+  ]
+}
